@@ -1,0 +1,94 @@
+@import 'nib'
+@import 'normalize'
+
+$color-primary = #000
+$color-secondary = #999
+$color-link = #15C
+$color-link-hover = darken($color-link, 50%)
+
+global-normalize()
+
+body
+  font 16px/24px Roboto, sans-serif
+
+a
+  color $color-link
+  &:hover
+    color $color-link-hover
+
+h1:first-child
+h2:first-child
+h3:first-child
+h4:first-child
+h5:first-child
+h6:first-child
+  margin-top 0
+
+code, kbd, pre, samp
+  font-size 0.9em
+  line-height 1.35em
+  margin 0
+
+.highlight
+  padding 6px
+
+.post
+  margin-bottom 48px
+  header
+    clearfix()
+    h1
+      float left
+    time
+      color $color-secondary
+      display block
+      float right
+  .title a
+    color inherit
+    text-decoration none
+
+.side
+  border-right 1px solid #ccc
+  float left
+  font-size smaller
+  height 100%
+  position fixed
+  width 250px
+
+  div
+    margin 12px 24px
+
+  .logo
+    background #000
+    color #fff
+    font-size 24px
+    font-weight bold
+    line-height 1
+    margin 0
+    padding 12px 0
+    text-align center
+    width 48px
+    a
+      color #fff
+      text-decoration none
+
+  .intro
+    h1,p
+      margin 0
+    h1
+      font-size 1.1em
+      font-weight normal
+    p
+      color #999
+
+  .links
+    ul
+      list-style none
+      margin 0
+      padding 0
+
+.main
+  float left
+  margin-left 250px
+  padding 60px 24px
+  width 1000px - @margin-left
+
