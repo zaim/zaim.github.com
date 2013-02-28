@@ -1,0 +1,3 @@
+Don't forget to run `npm install` on a fresh checkout to install the Node modules.
+
+Required to generate CSS using Stylus.
