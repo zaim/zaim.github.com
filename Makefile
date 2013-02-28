@@ -7,8 +7,7 @@ name   = $(shell echo -n $(title) | $(slugify))
 date   = $(shell date +%Y-%m-%d)
 type   = md
 file   = ./_posts/$(date)-$(name).$(type)
-open   = 0
-editor = vim +
+open   = vim +
 layout = default
 
 # Assets
@@ -37,10 +36,10 @@ post:
 	@echo "---" >> $(file)
 	@echo >> $(file)
 ifneq ($(open), 0)
-	@$(editor) $(file)
+	@$(open) $(file)
 endif
 
 server:
 	@jekyll --server --auto
 
-.PHONY: site css post
+.PHONY: site css post server
