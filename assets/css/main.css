@@ -258,34 +258,58 @@ samp {
   line-height: 1.35em;
   margin: 0;
 }
+hr {
+  border-style: solid;
+  border-width: 1px 0 0 0;
+  border-color: #999;
+}
 .highlight {
   padding: 6px;
 }
-.post {
+article.post {
   margin-bottom: 48px;
 }
-.post header {
+article.post header {
   zoom: 1;
 }
-.post header:before,
-.post header:after {
+article.post header:before,
+article.post header:after {
   content: "";
   display: table;
 }
-.post header:after {
+article.post header:after {
   clear: both;
 }
-.post header h1 {
+article.post header h1 {
   float: left;
 }
-.post header time {
+article.post header time {
   color: #999;
   display: block;
   float: right;
 }
-.post .title a {
+article.post .title a {
   color: inherit;
   text-decoration: none;
+}
+ul.posts {
+  margin: 0;
+  padding: 0;
+}
+li.post {
+  list-style: none;
+  margin-bottom: 1em;
+}
+li.post h1 {
+  font-size: 1em;
+  margin: 0;
+}
+li.post time {
+  font-size: smaller;
+}
+li.post .excerpt {
+  font-size: smaller;
+  margin-top: -1em;
 }
 .side {
   border-right: 1px solid #ccc;
