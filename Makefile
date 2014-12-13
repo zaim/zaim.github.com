@@ -1,9 +1,9 @@
 # Slugify title using tr
-slugify = tr -d '[:punct:]' | tr '[:upper:]' '[:lower:]' | tr '[:space:]' '-'
+slugify = tr -d '[:punct:]\n' | tr '[:upper:]' '[:lower:]' | tr '[:space:]' '-'
 
 # Post options
 title  = New Post
-name   = $(shell echo -n $(title) | $(slugify))
+name   = $(shell echo $(title)|$(slugify))
 date   = $(shell date +%Y-%m-%d)
 type   = md
 file   = ./_posts/$(date)-$(name).$(type)
@@ -23,7 +23,7 @@ stylus_opts = -I _plugins/node_modules/nib/lib \
 			  -u normalize/lib/normalize
 
 site: css
-	@jekyll
+	@jekyll build
 
 css:
 	@$(stylus) $(stylus_opts) -o $(css_out) $(styluses)
@@ -40,6 +40,10 @@ ifneq ($(open), 0)
 endif
 
 server:
-	@jekyll --server --auto
+	@jekyll serve --watch
 
-.PHONY: site css post server
+install:
+	gem install jekyll
+	cd _plugins && npm install
+
+.PHONY: site css post server install
